@@ -35,9 +35,9 @@ void Particle::setup(){
 }
 }
 
-void Particle::update(){
-    pos.x += vel.x*10.0;
-    pos.y += vel.y*10.0;
+void Particle::update(float volume){
+    pos.x += vel.x * volume;
+    pos.y += vel.y * volume;
     
     if( pos.x < 0.0 || pos.x > ofGetWidth() ){
         vel.x = vel.x * -1.0;

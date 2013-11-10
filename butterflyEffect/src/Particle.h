@@ -5,7 +5,7 @@ class Particle{
     public:
     Particle();
     void setup();
-    void update();
+    void update(float volume);
     void draw();
     
     ofVec2f pos,vel,acc;

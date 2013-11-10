@@ -2,6 +2,10 @@
 
 #include "ofMain.h"
 #include "Particle.h"
+#include "fft.h"
+#include "FFTOctaveAnalyzer.h"
+#define BUFFER_SIZE 512
+
 
 class testApp : public ofBaseApp{
 
@@ -21,4 +25,21 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     vector<Particle>pList;
+    
+    //fft
+    void audioReceived 	(float * input, int bufferSize, int nChannels);
+    
+    
+    FFTOctaveAnalyzer FFTanalyzer;
+    
+    float left[BUFFER_SIZE];
+    float right[BUFFER_SIZE];
+    
+    fft		myfft;
+    
+    float magnitude[BUFFER_SIZE];
+    float phase[BUFFER_SIZE];
+    float power[BUFFER_SIZE];
+    float freq[BUFFER_SIZE/2];
+
 };
